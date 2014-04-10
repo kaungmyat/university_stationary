@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mob_Master_Emp.Master.cs" Inherits="Logic_University_Stationary.Mobile.mob_MasterPages.Mob_Master_Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <link rel="Stylesheet" href="Mobile/CSS_Mobile/mobile.css" type="text/css""/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form>
+        <input  type="hidden" class="hiddenclass" runat='server' id="param1" value="" />
+        <input  type="hidden" class="hiddenclass_Emp" runat='server' id="param_Emp" value="" />
+        <input  type="hidden" class="hiddenclass_Role" runat='server' id="param_Role" value="" />
+    </form>
+    
+   <div data-role="page">
+
+    <div data-role="panel" id="mypanel" data-swipe-close="true" data-theme="a">
+        <!-- panel content goes here -->
+        
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <img src="male_usr.jpg">
+                <h2><script>document.write($('.hiddenclass_Emp').val());</script></h2>
+                <p><script>document.write($('.hiddenclass_Role').val());</script></p>
+            </li>
+        </ul>
+
+        <ul data-role="listview" data-inset="true" data-theme="c">
+            <li><a href="https://www.gmail.com" target="_blank">Inbox <span class="ui-li-count"><script language="javascript">document.write($('.hiddenclass').val());</script> </span></a></li> 
+            <li data-icon="gear"><a href="#">Setting</a></li>
+            <li data-icon="info"><a href="#">About</a></li>
+            <li data-icon="false"><a href="mob_logout.aspx" data-ajax="false">Log out</a></li>
+            <li data-icon="delete"><a href="#my-header" data-rel="close">Close panel</a></li>
+        </ul>
+
+        <%--<a href="#my-header" data-rel="close">Close panel</a>--%>
+    </div><!-- /panel -->
+
+
+     <div data-role="header"  data-theme="b">
+        <a href="#mypanel" class="menu" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true">Bars</a>
+        <h1>LOGIC University</h1>
+    </div>      
+
+	<div data-role="content">
+
+    <p>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </p>
+    </div>
+    
+    <%--<ul data-role="listview">
+        <li><a href="RequisitionStatus.aspx" data-ajax="false">View Requisition Status</a></li>
+        
+    </ul>--%>
+</body>
+</html>

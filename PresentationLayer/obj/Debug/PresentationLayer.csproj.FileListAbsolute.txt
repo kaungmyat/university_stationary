@@ -1,0 +1,27 @@
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\PresentationLayer.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\PresentationLayer.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\BLL.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\DAL.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\BLL.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\bin\DAL.pdb
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.dll
+C:\Users\user\Documents\Visual Studio 2010\Projects\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\ADStationary\PresentationLayer\bin\PresentationLayer.dll
+C:\ADStationary\PresentationLayer\bin\PresentationLayer.pdb
+C:\ADStationary\PresentationLayer\bin\BLL.dll
+C:\ADStationary\PresentationLayer\bin\DAL.dll
+C:\ADStationary\PresentationLayer\bin\BLL.pdb
+C:\ADStationary\PresentationLayer\bin\DAL.pdb
+C:\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.csprojResolveAssemblyReference.cache
+C:\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.dll
+C:\ADStationary\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\obj\Debug\PresentationLayer.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\obj\Debug\PresentationLayer.pdb
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\PresentationLayer.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\PresentationLayer.pdb
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\BLL.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\DAL.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\BLL.pdb
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\PresentationLayer\bin\DAL.pdb

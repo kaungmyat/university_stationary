@@ -1,0 +1,29 @@
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\bin\Debug\DAL.dll.config
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\bin\Debug\DAL.dll
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\bin\Debug\DAL.pdb
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\obj\Debug\DAL.dll
+C:\Users\Michael Liau\Documents\Visual Studio 2010\Projects\Logic_University\DAL\obj\Debug\DAL.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\bin\Debug\DAL.dll.config
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\bin\Debug\DAL.dll
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\bin\Debug\DAL.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\obj\Debug\DAL.dll
+C:\Users\Kaung Myat\Documents\ADProject\Logic_University\DAL\obj\Debug\DAL.pdb
+D:\ADProject\UPdated_Project\DAL\bin\Debug\DAL.dll.config
+D:\ADProject\UPdated_Project\DAL\bin\Debug\DAL.dll
+D:\ADProject\UPdated_Project\DAL\bin\Debug\DAL.pdb
+D:\ADProject\UPdated_Project\DAL\obj\Debug\DAL.dll
+D:\ADProject\UPdated_Project\DAL\obj\Debug\DAL.pdb
+D:\ADProject14-9-2013\UPdated_Project\DAL\bin\Debug\DAL.dll.config
+D:\ADProject14-9-2013\UPdated_Project\DAL\bin\Debug\DAL.dll
+D:\ADProject14-9-2013\UPdated_Project\DAL\bin\Debug\DAL.pdb
+D:\ADProject14-9-2013\UPdated_Project\DAL\obj\Debug\DAL.dll
+D:\ADProject14-9-2013\UPdated_Project\DAL\obj\Debug\DAL.pdb
+D:\ADProject14-9-2013\UPdated_Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\bin\Debug\DAL.dll.config
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\bin\Debug\DAL.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\bin\Debug\DAL.pdb
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\obj\Debug\DAL.dll
+C:\Users\ZhangNa\Documents\Visual Studio 2010\Projects\Final_Project\DAL\obj\Debug\DAL.pdb

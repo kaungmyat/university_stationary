@@ -1,0 +1,1748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LOGICModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LOGICModelStoreContainer">
+          <EntitySet Name="Delegate_User" EntityType="LOGICModel.Store.Delegate_User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Department" EntityType="LOGICModel.Store.Department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Disbursement" EntityType="LOGICModel.Store.Disbursement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Disbursement_Detail" EntityType="LOGICModel.Store.Disbursement_Detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Generate_ID" EntityType="LOGICModel.Store.Generate_ID" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Inventory_Adjustment_Voucher" EntityType="LOGICModel.Store.Inventory_Adjustment_Voucher" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Inventory_Adjustment_Voucher_Detail" EntityType="LOGICModel.Store.Inventory_Adjustment_Voucher_Detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Purchase_Order" EntityType="LOGICModel.Store.Purchase_Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Purchase_Order_Detail" EntityType="LOGICModel.Store.Purchase_Order_Detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Requisition" EntityType="LOGICModel.Store.Requisition" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Requisition_Detail" EntityType="LOGICModel.Store.Requisition_Detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Stationary_Catalogue" EntityType="LOGICModel.Store.Stationary_Catalogue" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StockCard" EntityType="LOGICModel.Store.StockCard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StockCard_Detail" EntityType="LOGICModel.Store.StockCard_Detail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Supplier" EntityType="LOGICModel.Store.Supplier" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="LOGICModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tender" EntityType="LOGICModel.Store.Tender" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tmp_Retrieval" EntityType="LOGICModel.Store.tmp_Retrieval" store:Type="Tables" store:Schema="dbo" store:Name="tmp_Retrieval">
+            <DefiningQuery>SELECT 
+      [tmp_Retrieval].[Item_Code] AS [Item_Code], 
+      [tmp_Retrieval].[Description] AS [Description], 
+      [tmp_Retrieval].[Dept_ID] AS [Dept_ID], 
+      [tmp_Retrieval].[Dept_Name] AS [Dept_Name], 
+      [tmp_Retrieval].[Request_Qty] AS [Request_Qty], 
+      [tmp_Retrieval].[Actual_Qty] AS [Actual_Qty], 
+      [tmp_Retrieval].[Emp_ID] AS [Emp_ID]
+      FROM [dbo].[tmp_Retrieval] AS [tmp_Retrieval]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="LOGICModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="getBalFromItemCode" EntityType="LOGICModel.Store.getBalFromItemCode" store:Type="Views" store:Schema="dbo" store:Name="getBalFromItemCode">
+            <DefiningQuery>SELECT 
+      [getBalFromItemCode].[StockCard_ID] AS [StockCard_ID], 
+      [getBalFromItemCode].[Item_Code] AS [Item_Code], 
+      [getBalFromItemCode].[Balance] AS [Balance], 
+      [getBalFromItemCode].[Date] AS [Date]
+      FROM [dbo].[getBalFromItemCode] AS [getBalFromItemCode]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="getOutStandList" EntityType="LOGICModel.Store.getOutStandList" store:Type="Views" store:Schema="dbo" store:Name="getOutStandList">
+            <DefiningQuery>SELECT 
+      [getOutStandList].[Disbursement_ID] AS [Disbursement_ID], 
+      [getOutStandList].[Item_Code] AS [Item_Code], 
+      [getOutStandList].[OutStand_Qty] AS [OutStand_Qty]
+      FROM [dbo].[getOutStandList] AS [getOutStandList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReqList" EntityType="LOGICModel.Store.ReqList" store:Type="Views" store:Schema="dbo" store:Name="ReqList">
+            <DefiningQuery>SELECT 
+      [ReqList].[Req_Form_No] AS [Req_Form_No], 
+      [ReqList].[Item_code] AS [Item_code], 
+      [ReqList].[Description] AS [Description], 
+      [ReqList].[Qty] AS [Qty]
+      FROM [dbo].[ReqList] AS [ReqList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Retrieval_Dept" EntityType="LOGICModel.Store.Retrieval_Dept" store:Type="Views" store:Schema="dbo" store:Name="Retrieval_Dept">
+            <DefiningQuery>SELECT 
+      [Retrieval_Dept].[Item_Code] AS [Item_Code], 
+      [Retrieval_Dept].[Req_Form_No] AS [Req_Form_No], 
+      [Retrieval_Dept].[prior] AS [prior], 
+      [Retrieval_Dept].[Needed] AS [Needed], 
+      [Retrieval_Dept].[Retrieved] AS [Retrieved]
+      FROM [dbo].[Retrieval_Dept] AS [Retrieval_Dept]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Retrieval_Item" EntityType="LOGICModel.Store.Retrieval_Item" store:Type="Views" store:Schema="dbo" store:Name="Retrieval_Item">
+            <DefiningQuery>SELECT 
+      [Retrieval_Item].[Item_Code] AS [Item_Code], 
+      [Retrieval_Item].[Needed] AS [Needed], 
+      [Retrieval_Item].[Retrieved] AS [Retrieved]
+      FROM [dbo].[Retrieval_Item] AS [Retrieval_Item]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_Check_Existing_Stock" EntityType="LOGICModel.Store.view_Check_Existing_Stock" store:Type="Views" store:Schema="dbo" store:Name="view_Check_Existing_Stock">
+            <DefiningQuery>SELECT 
+      [view_Check_Existing_Stock].[Item_Code] AS [Item_Code], 
+      [view_Check_Existing_Stock].[Description] AS [Description], 
+      [view_Check_Existing_Stock].[Category] AS [Category], 
+      [view_Check_Existing_Stock].[Balance] AS [Balance], 
+      [view_Check_Existing_Stock].[UOM] AS [UOM]
+      FROM [dbo].[view_Check_Existing_Stock] AS [view_Check_Existing_Stock]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_PurchaseOrderForm" EntityType="LOGICModel.Store.view_PurchaseOrderForm" store:Type="Views" store:Schema="dbo" store:Name="view_PurchaseOrderForm">
+            <DefiningQuery>SELECT 
+      [view_PurchaseOrderForm].[Item_Code] AS [Item_Code], 
+      [view_PurchaseOrderForm].[DESCRIPTION] AS [DESCRIPTION], 
+      [view_PurchaseOrderForm].[Reorder_Qty] AS [Reorder_Qty], 
+      [view_PurchaseOrderForm].[Price] AS [Price], 
+      [view_PurchaseOrderForm].[Amount] AS [Amount]
+      FROM [dbo].[view_PurchaseOrderForm] AS [view_PurchaseOrderForm]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_ReorderItems" EntityType="LOGICModel.Store.view_ReorderItems" store:Type="Views" store:Schema="dbo" store:Name="view_ReorderItems">
+            <DefiningQuery>SELECT 
+      [view_ReorderItems].[Item_Code] AS [Item_Code], 
+      [view_ReorderItems].[Description] AS [Description], 
+      [view_ReorderItems].[Balance] AS [Balance], 
+      [view_ReorderItems].[Reorder_Level] AS [Reorder_Level], 
+      [view_ReorderItems].[Reorder_Qty] AS [Reorder_Qty], 
+      [view_ReorderItems].[UOM] AS [UOM]
+      FROM [dbo].[view_ReorderItems] AS [view_ReorderItems]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_RequisitionDisbursementStatus" EntityType="LOGICModel.Store.view_RequisitionDisbursementStatus" store:Type="Views" store:Schema="dbo" store:Name="view_RequisitionDisbursementStatus">
+            <DefiningQuery>SELECT 
+      [view_RequisitionDisbursementStatus].[Emp_ID] AS [Emp_ID], 
+      [view_RequisitionDisbursementStatus].[Emp_Name] AS [Emp_Name], 
+      [view_RequisitionDisbursementStatus].[Req_Form_No] AS [Req_Form_No], 
+      [view_RequisitionDisbursementStatus].[Approval_Status] AS [Approval_Status], 
+      [view_RequisitionDisbursementStatus].[Request_Date] AS [Request_Date], 
+      [view_RequisitionDisbursementStatus].[Disburse_Status] AS [Disburse_Status], 
+      [view_RequisitionDisbursementStatus].[Rej_Comment] AS [Rej_Comment]
+      FROM [dbo].[view_RequisitionDisbursementStatus] AS [view_RequisitionDisbursementStatus]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Delegate_User_Users" Association="LOGICModel.Store.FK_Delegate_User_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Delegate_User" EntitySet="Delegate_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disbursement_Detail_Disbursement" Association="LOGICModel.Store.FK_Disbursement_Detail_Disbursement">
+            <End Role="Disbursement" EntitySet="Disbursement" />
+            <End Role="Disbursement_Detail" EntitySet="Disbursement_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disbursement_Requisition" Association="LOGICModel.Store.FK_Disbursement_Requisition">
+            <End Role="Requisition" EntitySet="Requisition" />
+            <End Role="Disbursement" EntitySet="Disbursement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" Association="LOGICModel.Store.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+            <End Role="Inventory_Adjustment_Voucher" EntitySet="Inventory_Adjustment_Voucher" />
+            <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" Association="LOGICModel.Store.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Purchase_Order_Detail_Purchase_Order" Association="LOGICModel.Store.FK_Purchase_Order_Detail_Purchase_Order">
+            <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+            <End Role="Purchase_Order_Detail" EntitySet="Purchase_Order_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Purchase_Order_Supplier" Association="LOGICModel.Store.FK_Purchase_Order_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requisition_Detail_Requisition" Association="LOGICModel.Store.FK_Requisition_Detail_Requisition">
+            <End Role="Requisition" EntitySet="Requisition" />
+            <End Role="Requisition_Detail" EntitySet="Requisition_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requisition_Users" Association="LOGICModel.Store.FK_Requisition_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Requisition" EntitySet="Requisition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockCard_Detail_StockCard" Association="LOGICModel.Store.FK_StockCard_Detail_StockCard">
+            <End Role="StockCard" EntitySet="StockCard" />
+            <End Role="StockCard_Detail" EntitySet="StockCard_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockCard_Stationary_Catalogue" Association="LOGICModel.Store.FK_StockCard_Stationary_Catalogue">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="StockCard" EntitySet="StockCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tender_Stationary_Catalogue1" Association="LOGICModel.Store.FK_Tender_Stationary_Catalogue1">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="Tender" EntitySet="Tender" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tender_Supplier" Association="LOGICModel.Store.FK_Tender_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Tender" EntitySet="Tender" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Delegate_User">
+          <Key>
+            <PropertyRef Name="Del_ID" />
+          </Key>
+          <Property Name="Del_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Dept_ID" />
+          </Key>
+          <Property Name="Dept_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Dept_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Contact_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fax_No" Type="nvarchar" MaxLength="20" />
+          <Property Name="Head_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Head_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Collection_Point" Type="nvarchar" MaxLength="50" />
+          <Property Name="Representative_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Representative_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Disbursement">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+          </Key>
+          <Property Name="Disbursement_ID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Req_Form_No" Type="nvarchar" MaxLength="10" />
+          <Property Name="Dept_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Disburse_Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Disbursement_Detail">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Disbursement_ID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Qty_Required" Type="int" />
+          <Property Name="Qty_Retrieved" Type="int" />
+          <Property Name="Qty_Disbursed" Type="int" />
+        </EntityType>
+        <EntityType Name="Generate_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Table_Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Last_ID" Type="int" />
+          <Property Name="Seg1" Type="int" />
+          <Property Name="Seg2" Type="int" />
+        </EntityType>
+        <EntityType Name="Inventory_Adjustment_Voucher">
+          <Key>
+            <PropertyRef Name="Voucher_ID" />
+          </Key>
+          <Property Name="Voucher_ID" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Date_Issue" Type="datetime" />
+          <Property Name="AuthorizedBy_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Authorized_By" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Inventory_Adjustment_Voucher_Detail">
+          <Key>
+            <PropertyRef Name="Voucher_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Voucher_ID" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Qty_Adjust" Type="int" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Purchase_Order">
+          <Key>
+            <PropertyRef Name="Purchase_Order_No" />
+          </Key>
+          <Property Name="Supplier_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Purchase_Order_No" Type="nvarchar" Nullable="false" MaxLength="9" />
+          <Property Name="Deliver_To" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expected_Date" Type="datetime" />
+          <Property Name="Order_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approve_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approve_Date" Type="datetime" />
+          <Property Name="Receive_Flag" Type="bit" />
+        </EntityType>
+        <EntityType Name="Purchase_Order_Detail">
+          <Key>
+            <PropertyRef Name="Purchase_Order_No" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Purchase_Order_No" Type="nvarchar" Nullable="false" MaxLength="9" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="Requisition">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+          </Key>
+          <Property Name="Req_Form_No" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Request_Date" Type="datetime" />
+          <Property Name="Emp_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Approval_Status" Type="int" />
+          <Property Name="Approval_By" Type="nvarchar" MaxLength="25" />
+          <Property Name="Approval_Date" Type="datetime" />
+          <Property Name="Req_Status" Type="bit" />
+          <Property Name="Notification" Type="bit" />
+          <Property Name="Prior" Type="bit" />
+          <Property Name="Rej_Comment" Type="nchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Requisition_Detail">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Req_Form_No" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+        </EntityType>
+        <EntityType Name="Stationary_Catalogue">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reorder_Level" Type="int" />
+          <Property Name="Reorder_Qty" Type="int" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="StockCard">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Item_Code" Type="nvarchar" MaxLength="5" />
+          <Property Name="first_Supplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="second_Supplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="third_Supplier" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StockCard_Detail">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+            <PropertyRef Name="Tran_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Tran_ID" Type="nvarchar" Nullable="false" MaxLength="11" />
+          <Property Name="Emp_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Dept_Supplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="Balance" Type="int" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Supplier_ID" />
+          </Key>
+          <Property Name="Supplier_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Supplier_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Context_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fax_No" Type="nvarchar" MaxLength="25" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="Email" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tender">
+          <Key>
+            <PropertyRef Name="Supplier_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Supplier_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.tmp_Retrieval' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tmp_Retrieval">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+            <PropertyRef Name="Dept_ID" />
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dept_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Dept_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Request_Qty" Type="int" />
+          <Property Name="Actual_Qty" Type="int" />
+          <Property Name="Emp_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dept_ID" Type="nvarchar" MaxLength="5" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="18" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Role" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.getBalFromItemCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="getBalFromItemCode">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Item_Code" Type="nvarchar" MaxLength="5" />
+          <Property Name="Balance" Type="int" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.getOutStandList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="getOutStandList">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Disbursement_ID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="OutStand_Qty" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.ReqList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="ReqList">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Item_code" />
+          </Key>
+          <Property Name="Req_Form_No" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Item_code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.Retrieval_Dept' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Retrieval_Dept">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+            <PropertyRef Name="Req_Form_No" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Req_Form_No" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="prior" Type="bit" />
+          <Property Name="Needed" Type="int" />
+          <Property Name="Retrieved" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.Retrieval_Item' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Retrieval_Item">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Needed" Type="int" />
+          <Property Name="Retrieved" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.view_Check_Existing_Stock' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="view_Check_Existing_Stock">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Balance" Type="int" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.view_PurchaseOrderForm' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="view_PurchaseOrderForm">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reorder_Qty" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Amount" Type="decimal" Precision="19" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.view_ReorderItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="view_ReorderItems">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="Balance" Type="int" />
+          <Property Name="Reorder_Level" Type="int" />
+          <Property Name="Reorder_Qty" Type="int" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'LOGIC.dbo.view_RequisitionDisbursementStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="view_RequisitionDisbursementStatus">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Disburse_Status" />
+            <PropertyRef Name="Rej_Comment" />
+          </Key>
+          <Property Name="Emp_ID" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Req_Form_No" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Approval_Status" Type="int" />
+          <Property Name="Request_Date" Type="datetime" />
+          <Property Name="Disburse_Status" Type="int" Nullable="false" />
+          <Property Name="Rej_Comment" Type="nchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_Delegate_User_Users">
+          <End Role="Users" Type="LOGICModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Delegate_User" Type="LOGICModel.Store.Delegate_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Delegate_User">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disbursement_Detail_Disbursement">
+          <End Role="Disbursement" Type="LOGICModel.Store.Disbursement" Multiplicity="1" />
+          <End Role="Disbursement_Detail" Type="LOGICModel.Store.Disbursement_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disbursement">
+              <PropertyRef Name="Disbursement_ID" />
+            </Principal>
+            <Dependent Role="Disbursement_Detail">
+              <PropertyRef Name="Disbursement_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disbursement_Requisition">
+          <End Role="Requisition" Type="LOGICModel.Store.Requisition" Multiplicity="0..1" />
+          <End Role="Disbursement" Type="LOGICModel.Store.Disbursement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisition">
+              <PropertyRef Name="Req_Form_No" />
+            </Principal>
+            <Dependent Role="Disbursement">
+              <PropertyRef Name="Req_Form_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+          <End Role="Inventory_Adjustment_Voucher" Type="LOGICModel.Store.Inventory_Adjustment_Voucher" Multiplicity="1" />
+          <End Role="Inventory_Adjustment_Voucher_Detail" Type="LOGICModel.Store.Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory_Adjustment_Voucher">
+              <PropertyRef Name="Voucher_ID" />
+            </Principal>
+            <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+              <PropertyRef Name="Voucher_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+          <End Role="Stationary_Catalogue" Type="LOGICModel.Store.Stationary_Catalogue" Multiplicity="1" />
+          <End Role="Inventory_Adjustment_Voucher_Detail" Type="LOGICModel.Store.Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Purchase_Order_Detail_Purchase_Order">
+          <End Role="Purchase_Order" Type="LOGICModel.Store.Purchase_Order" Multiplicity="1" />
+          <End Role="Purchase_Order_Detail" Type="LOGICModel.Store.Purchase_Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase_Order">
+              <PropertyRef Name="Purchase_Order_No" />
+            </Principal>
+            <Dependent Role="Purchase_Order_Detail">
+              <PropertyRef Name="Purchase_Order_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Purchase_Order_Supplier">
+          <End Role="Supplier" Type="LOGICModel.Store.Supplier" Multiplicity="0..1" />
+          <End Role="Purchase_Order" Type="LOGICModel.Store.Purchase_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Purchase_Order">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requisition_Detail_Requisition">
+          <End Role="Requisition" Type="LOGICModel.Store.Requisition" Multiplicity="1" />
+          <End Role="Requisition_Detail" Type="LOGICModel.Store.Requisition_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisition">
+              <PropertyRef Name="Req_Form_No" />
+            </Principal>
+            <Dependent Role="Requisition_Detail">
+              <PropertyRef Name="Req_Form_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requisition_Users">
+          <End Role="Users" Type="LOGICModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Requisition" Type="LOGICModel.Store.Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Requisition">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockCard_Detail_StockCard">
+          <End Role="StockCard" Type="LOGICModel.Store.StockCard" Multiplicity="1" />
+          <End Role="StockCard_Detail" Type="LOGICModel.Store.StockCard_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StockCard">
+              <PropertyRef Name="StockCard_ID" />
+            </Principal>
+            <Dependent Role="StockCard_Detail">
+              <PropertyRef Name="StockCard_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockCard_Stationary_Catalogue">
+          <End Role="Stationary_Catalogue" Type="LOGICModel.Store.Stationary_Catalogue" Multiplicity="0..1" />
+          <End Role="StockCard" Type="LOGICModel.Store.StockCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="StockCard">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tender_Stationary_Catalogue1">
+          <End Role="Stationary_Catalogue" Type="LOGICModel.Store.Stationary_Catalogue" Multiplicity="1" />
+          <End Role="Tender" Type="LOGICModel.Store.Tender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="Tender">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tender_Supplier">
+          <End Role="Supplier" Type="LOGICModel.Store.Supplier" Multiplicity="1" />
+          <End Role="Tender" Type="LOGICModel.Store.Tender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Tender">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="BundleAllRequisitions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Req_Frm_No" Type="nvarchar" Mode="In" />
+          <Parameter Name="deptID" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmpID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="BundleRequisition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Req_Frm_No" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmpID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="DateToDay" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateValue" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="DateToDayFormat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inputDate" Type="datetime" Mode="In" />
+          <Parameter Name="DayReturn" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="fillDataToRetrieval" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="empID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LOGICModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LOGIC_UniversityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departments" EntityType="LOGICModel.Department" />
+          <EntitySet Name="Disbursements" EntityType="LOGICModel.Disbursement" />
+          <EntitySet Name="Disbursement_Detail" EntityType="LOGICModel.Disbursement_Detail" />
+          <EntitySet Name="Generate_ID" EntityType="LOGICModel.Generate_ID" />
+          <EntitySet Name="Purchase_Order" EntityType="LOGICModel.Purchase_Order" />
+          <EntitySet Name="Purchase_Order_Detail" EntityType="LOGICModel.Purchase_Order_Detail" />
+          <EntitySet Name="Requisitions" EntityType="LOGICModel.Requisition" />
+          <EntitySet Name="Requisition_Detail" EntityType="LOGICModel.Requisition_Detail" />
+          <EntitySet Name="Stationary_Catalogue" EntityType="LOGICModel.Stationary_Catalogue" />
+          <EntitySet Name="StockCards" EntityType="LOGICModel.StockCard" />
+          <EntitySet Name="StockCard_Detail" EntityType="LOGICModel.StockCard_Detail" />
+          <EntitySet Name="Suppliers" EntityType="LOGICModel.Supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="LOGICModel.sysdiagram" />
+          <EntitySet Name="Tenders" EntityType="LOGICModel.Tender" />
+          <EntitySet Name="Users" EntityType="LOGICModel.User" />
+          <EntitySet Name="getBalFromItemCodes" EntityType="LOGICModel.getBalFromItemCode" />
+          <EntitySet Name="ReqLists" EntityType="LOGICModel.ReqList" />
+          <EntitySet Name="Retrieval_Item" EntityType="LOGICModel.Retrieval_Item" />
+          <EntitySet Name="view_Check_Existing_Stock" EntityType="LOGICModel.view_Check_Existing_Stock" />
+          <EntitySet Name="view_PurchaseOrderForm" EntityType="LOGICModel.view_PurchaseOrderForm" />
+          <EntitySet Name="view_ReorderItems" EntityType="LOGICModel.view_ReorderItems" />
+          <EntitySet Name="view_RequisitionDisbursementStatus" EntityType="LOGICModel.view_RequisitionDisbursementStatus" />
+          <AssociationSet Name="FK_Disbursement_Detail_Disbursement" Association="LOGICModel.FK_Disbursement_Detail_Disbursement">
+            <End Role="Disbursement" EntitySet="Disbursements" />
+            <End Role="Disbursement_Detail" EntitySet="Disbursement_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disbursement_Requisition" Association="LOGICModel.FK_Disbursement_Requisition">
+            <End Role="Requisition" EntitySet="Requisitions" />
+            <End Role="Disbursement" EntitySet="Disbursements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Purchase_Order_Detail_Purchase_Order" Association="LOGICModel.FK_Purchase_Order_Detail_Purchase_Order">
+            <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+            <End Role="Purchase_Order_Detail" EntitySet="Purchase_Order_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Purchase_Order_Supplier" Association="LOGICModel.FK_Purchase_Order_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requisition_Detail_Requisition" Association="LOGICModel.FK_Requisition_Detail_Requisition">
+            <End Role="Requisition" EntitySet="Requisitions" />
+            <End Role="Requisition_Detail" EntitySet="Requisition_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Requisition_Users" Association="LOGICModel.FK_Requisition_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Requisition" EntitySet="Requisitions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockCard_Stationary_Catalogue" Association="LOGICModel.FK_StockCard_Stationary_Catalogue">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="StockCard" EntitySet="StockCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tender_Stationary_Catalogue1" Association="LOGICModel.FK_Tender_Stationary_Catalogue1">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="Tender" EntitySet="Tenders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockCard_Detail_StockCard" Association="LOGICModel.FK_StockCard_Detail_StockCard">
+            <End Role="StockCard" EntitySet="StockCards" />
+            <End Role="StockCard_Detail" EntitySet="StockCard_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tender_Supplier" Association="LOGICModel.FK_Tender_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Tender" EntitySet="Tenders" />
+          </AssociationSet>
+          <EntitySet Name="Delegate_User" EntityType="LOGICModel.Delegate_User" />
+          <AssociationSet Name="FK_Delegate_User_Users" Association="LOGICModel.FK_Delegate_User_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Delegate_User" EntitySet="Delegate_User" />
+          </AssociationSet>
+          <EntitySet Name="Retrieval_Dept" EntityType="LOGICModel.Retrieval_Dept" />
+          <EntitySet Name="tmp_Retrieval" EntityType="LOGICModel.tmp_Retrieval" />
+          <EntitySet Name="getOutStandLists" EntityType="LOGICModel.getOutStandList" />
+          <EntitySet Name="Inventory_Adjustment_Voucher_Detail" EntityType="LOGICModel.Inventory_Adjustment_Voucher_Detail" />
+          <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" Association="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+            <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+            <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+          </AssociationSet>
+          <EntitySet Name="Inventory_Adjustment_Voucher" EntityType="LOGICModel.Inventory_Adjustment_Voucher" />
+          <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" Association="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+            <End Role="Inventory_Adjustment_Voucher" EntitySet="Inventory_Adjustment_Voucher" />
+            <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Dept_ID" />
+          </Key>
+          <Property Name="Dept_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Dept_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Contact_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Contact_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Fax_No" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Head_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Head_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Collection_Point" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Representative_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Representative_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Disbursement">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+          </Key>
+          <Property Name="Disbursement_ID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Req_Form_No" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Dept_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="Disburse_Status" Type="Int32" />
+          <NavigationProperty Name="Disbursement_Detail" Relationship="LOGICModel.FK_Disbursement_Detail_Disbursement" FromRole="Disbursement" ToRole="Disbursement_Detail" />
+          <NavigationProperty Name="Requisition" Relationship="LOGICModel.FK_Disbursement_Requisition" FromRole="Disbursement" ToRole="Requisition" />
+        </EntityType>
+        <EntityType Name="Disbursement_Detail">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Disbursement_ID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Qty_Required" Type="Int32" />
+          <Property Name="Qty_Retrieved" Type="Int32" />
+          <Property Name="Qty_Disbursed" Type="Int32" />
+          <NavigationProperty Name="Disbursement" Relationship="LOGICModel.FK_Disbursement_Detail_Disbursement" FromRole="Disbursement_Detail" ToRole="Disbursement" />
+        </EntityType>
+        <EntityType Name="Generate_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Table_Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Last_ID" Type="Int32" />
+          <Property Name="Seg1" Type="Int32" />
+          <Property Name="Seg2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Purchase_Order">
+          <Key>
+            <PropertyRef Name="Purchase_Order_No" />
+          </Key>
+          <Property Name="Supplier_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Purchase_Order_No" Type="String" Nullable="false" MaxLength="9" Unicode="true" FixedLength="false" />
+          <Property Name="Deliver_To" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Expected_Date" Type="DateTime" />
+          <Property Name="Order_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Approve_By" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Approve_Date" Type="DateTime" />
+          <Property Name="Receive_Flag" Type="Boolean" />
+          <NavigationProperty Name="Purchase_Order_Detail" Relationship="LOGICModel.FK_Purchase_Order_Detail_Purchase_Order" FromRole="Purchase_Order" ToRole="Purchase_Order_Detail" />
+          <NavigationProperty Name="Supplier" Relationship="LOGICModel.FK_Purchase_Order_Supplier" FromRole="Purchase_Order" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Purchase_Order_Detail">
+          <Key>
+            <PropertyRef Name="Purchase_Order_No" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Purchase_Order_No" Type="String" Nullable="false" MaxLength="9" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="Purchase_Order" Relationship="LOGICModel.FK_Purchase_Order_Detail_Purchase_Order" FromRole="Purchase_Order_Detail" ToRole="Purchase_Order" />
+        </EntityType>
+        <EntityType Name="Requisition">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+          </Key>
+          <Property Name="Req_Form_No" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Request_Date" Type="DateTime" />
+          <Property Name="Emp_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Approval_Status" Type="Int32" />
+          <Property Name="Approval_By" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Approval_Date" Type="DateTime" />
+          <Property Name="Req_Status" Type="Boolean" />
+          <Property Name="Notification" Type="Boolean" />
+          <Property Name="Prior" Type="Boolean" />
+          <Property Name="Rej_Comment" Type="String" MaxLength="200" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Disbursements" Relationship="LOGICModel.FK_Disbursement_Requisition" FromRole="Requisition" ToRole="Disbursement" />
+          <NavigationProperty Name="Requisition_Detail" Relationship="LOGICModel.FK_Requisition_Detail_Requisition" FromRole="Requisition" ToRole="Requisition_Detail" />
+          <NavigationProperty Name="User" Relationship="LOGICModel.FK_Requisition_Users" FromRole="Requisition" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Requisition_Detail">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Req_Form_No" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Qty" Type="Int32" />
+          <NavigationProperty Name="Requisition" Relationship="LOGICModel.FK_Requisition_Detail_Requisition" FromRole="Requisition_Detail" ToRole="Requisition" />
+        </EntityType>
+        <EntityType Name="Stationary_Catalogue">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Category" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Reorder_Level" Type="Int32" />
+          <Property Name="Reorder_Qty" Type="Int32" />
+          <Property Name="UOM" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="StockCards" Relationship="LOGICModel.FK_StockCard_Stationary_Catalogue" FromRole="Stationary_Catalogue" ToRole="StockCard" />
+          <NavigationProperty Name="Tenders" Relationship="LOGICModel.FK_Tender_Stationary_Catalogue1" FromRole="Stationary_Catalogue" ToRole="Tender" />
+          <NavigationProperty Name="Inventory_Adjustment_Voucher_Detail" Relationship="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" FromRole="Stationary_Catalogue" ToRole="Inventory_Adjustment_Voucher_Detail" />
+        </EntityType>
+        <EntityType Name="StockCard">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="first_Supplier" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="second_Supplier" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="third_Supplier" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGICModel.FK_StockCard_Stationary_Catalogue" FromRole="StockCard" ToRole="Stationary_Catalogue" />
+          <NavigationProperty Name="StockCard_Detail" Relationship="LOGICModel.FK_StockCard_Detail_StockCard" FromRole="StockCard" ToRole="StockCard_Detail" />
+        </EntityType>
+        <EntityType Name="StockCard_Detail">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+            <PropertyRef Name="Tran_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Tran_ID" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="Dept_Supplier" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Balance" Type="Int32" />
+          <NavigationProperty Name="StockCard" Relationship="LOGICModel.FK_StockCard_Detail_StockCard" FromRole="StockCard_Detail" ToRole="StockCard" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Supplier_ID" />
+          </Key>
+          <Property Name="Supplier_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Supplier_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Context_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone_No" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Fax_No" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Purchase_Order" Relationship="LOGICModel.FK_Purchase_Order_Supplier" FromRole="Supplier" ToRole="Purchase_Order" />
+          <NavigationProperty Name="Tenders" Relationship="LOGICModel.FK_Tender_Supplier" FromRole="Supplier" ToRole="Tender" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tender">
+          <Key>
+            <PropertyRef Name="Supplier_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Supplier_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGICModel.FK_Tender_Stationary_Catalogue1" FromRole="Tender" ToRole="Stationary_Catalogue" />
+          <NavigationProperty Name="Supplier" Relationship="LOGICModel.FK_Tender_Supplier" FromRole="Tender" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Name="Emp_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Dept_ID" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="18" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="Role" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Requisitions" Relationship="LOGICModel.FK_Requisition_Users" FromRole="Users" ToRole="Requisition" />
+          <NavigationProperty Name="Delegate_User" Relationship="LOGICModel.FK_Delegate_User_Users" FromRole="User" ToRole="Delegate_User" />
+        </EntityType>
+        <EntityType Name="getBalFromItemCode">
+          <Key>
+            <PropertyRef Name="StockCard_ID" />
+          </Key>
+          <Property Name="StockCard_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Item_Code" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Balance" Type="Int32" />
+          <Property Name="Date" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="ReqList">
+          <Key>
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Item_code" />
+          </Key>
+          <Property Name="Req_Form_No" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Item_code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Qty" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Retrieval_Item">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Needed" Type="Int32" />
+          <Property Name="Retrieved" Type="Int32" />
+        </EntityType>
+        <EntityType Name="view_Check_Existing_Stock">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Category" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Balance" Type="Int32" />
+          <Property Name="UOM" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="view_PurchaseOrderForm">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Reorder_Qty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="2" />
+        </EntityType>
+        <EntityType Name="view_ReorderItems">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Name="Item_Code" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Balance" Type="Int32" />
+          <Property Name="Reorder_Level" Type="Int32" />
+          <Property Name="Reorder_Qty" Type="Int32" />
+          <Property Name="UOM" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="view_RequisitionDisbursementStatus">
+          <Key>
+            <PropertyRef Name="Emp_ID" />
+            <PropertyRef Name="Req_Form_No" />
+            <PropertyRef Name="Disburse_Status" />
+            <PropertyRef Name="Rej_Comment" />
+          </Key>
+          <Property Name="Emp_ID" Type="String" Nullable="false" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Req_Form_No" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Approval_Status" Type="Int32" />
+          <Property Name="Request_Date" Type="DateTime" />
+          <Property Name="Disburse_Status" Type="Int32" Nullable="false" />
+          <Property Name="Rej_Comment" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <Association Name="FK_Disbursement_Detail_Disbursement">
+          <End Role="Disbursement" Type="LOGICModel.Disbursement" Multiplicity="1" />
+          <End Role="Disbursement_Detail" Type="LOGICModel.Disbursement_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disbursement">
+              <PropertyRef Name="Disbursement_ID" />
+            </Principal>
+            <Dependent Role="Disbursement_Detail">
+              <PropertyRef Name="Disbursement_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disbursement_Requisition">
+          <End Role="Requisition" Type="LOGICModel.Requisition" Multiplicity="0..1" />
+          <End Role="Disbursement" Type="LOGICModel.Disbursement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisition">
+              <PropertyRef Name="Req_Form_No" />
+            </Principal>
+            <Dependent Role="Disbursement">
+              <PropertyRef Name="Req_Form_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Purchase_Order_Detail_Purchase_Order">
+          <End Role="Purchase_Order" Type="LOGICModel.Purchase_Order" Multiplicity="1" />
+          <End Role="Purchase_Order_Detail" Type="LOGICModel.Purchase_Order_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase_Order">
+              <PropertyRef Name="Purchase_Order_No" />
+            </Principal>
+            <Dependent Role="Purchase_Order_Detail">
+              <PropertyRef Name="Purchase_Order_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Purchase_Order_Supplier">
+          <End Role="Supplier" Type="LOGICModel.Supplier" Multiplicity="0..1" />
+          <End Role="Purchase_Order" Type="LOGICModel.Purchase_Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Purchase_Order">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requisition_Detail_Requisition">
+          <End Role="Requisition" Type="LOGICModel.Requisition" Multiplicity="1" />
+          <End Role="Requisition_Detail" Type="LOGICModel.Requisition_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisition">
+              <PropertyRef Name="Req_Form_No" />
+            </Principal>
+            <Dependent Role="Requisition_Detail">
+              <PropertyRef Name="Req_Form_No" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Requisition_Users">
+          <End Role="Users" Type="LOGICModel.User" Multiplicity="0..1" />
+          <End Role="Requisition" Type="LOGICModel.Requisition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Requisition">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockCard_Stationary_Catalogue">
+          <End Role="Stationary_Catalogue" Type="LOGICModel.Stationary_Catalogue" Multiplicity="0..1" />
+          <End Role="StockCard" Type="LOGICModel.StockCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="StockCard">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tender_Stationary_Catalogue1">
+          <End Role="Stationary_Catalogue" Type="LOGICModel.Stationary_Catalogue" Multiplicity="1" />
+          <End Role="Tender" Type="LOGICModel.Tender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="Tender">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockCard_Detail_StockCard">
+          <End Role="StockCard" Type="LOGICModel.StockCard" Multiplicity="1" />
+          <End Role="StockCard_Detail" Type="LOGICModel.StockCard_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StockCard">
+              <PropertyRef Name="StockCard_ID" />
+            </Principal>
+            <Dependent Role="StockCard_Detail">
+              <PropertyRef Name="StockCard_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tender_Supplier">
+          <End Role="Supplier" Type="LOGICModel.Supplier" Multiplicity="1" />
+          <End Role="Tender" Type="LOGICModel.Tender" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="Supplier_ID" />
+            </Principal>
+            <Dependent Role="Tender">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Delegate_User">
+          <Key>
+            <PropertyRef Name="Del_ID" />
+          </Key>
+          <Property Type="Int32" Name="Del_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Emp_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="FromDate" />
+          <Property Type="DateTime" Name="ToDate" />
+          <NavigationProperty Name="User" Relationship="LOGICModel.FK_Delegate_User_Users" FromRole="Delegate_User" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Delegate_User_Users">
+          <End Type="LOGICModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="LOGICModel.Delegate_User" Role="Delegate_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Emp_ID" />
+            </Principal>
+            <Dependent Role="Delegate_User">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Retrieval_Dept">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+            <PropertyRef Name="Req_Form_No" />
+          </Key>
+          <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Req_Form_No" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="prior" />
+          <Property Type="Int32" Name="Needed" />
+          <Property Type="Int32" Name="Retrieved" />
+        </EntityType>
+        <EntityType Name="tmp_Retrieval">
+          <Key>
+            <PropertyRef Name="Item_Code" />
+            <PropertyRef Name="Dept_ID" />
+            <PropertyRef Name="Emp_ID" />
+          </Key>
+          <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dept_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Dept_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Request_Qty" />
+          <Property Type="Int32" Name="Actual_Qty" />
+          <Property Type="String" Name="Emp_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="getOutStandList">
+          <Key>
+            <PropertyRef Name="Disbursement_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Type="String" Name="Disbursement_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OutStand_Qty" />
+        </EntityType>
+        <EntityType Name="Inventory_Adjustment_Voucher_Detail">
+          <Key>
+            <PropertyRef Name="Voucher_ID" />
+            <PropertyRef Name="Item_Code" />
+          </Key>
+          <Property Type="String" Name="Voucher_ID" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Qty_Adjust" />
+          <Property Type="String" Name="Reason" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Status" />
+          <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" FromRole="Inventory_Adjustment_Voucher_Detail" ToRole="Stationary_Catalogue" />
+          <NavigationProperty Name="Inventory_Adjustment_Voucher" Relationship="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" FromRole="Inventory_Adjustment_Voucher_Detail" ToRole="Inventory_Adjustment_Voucher" />
+        </EntityType>
+        <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+          <End Type="LOGICModel.Stationary_Catalogue" Role="Stationary_Catalogue" Multiplicity="1" />
+          <End Type="LOGICModel.Inventory_Adjustment_Voucher_Detail" Role="Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stationary_Catalogue">
+              <PropertyRef Name="Item_Code" />
+            </Principal>
+            <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+              <PropertyRef Name="Item_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Inventory_Adjustment_Voucher">
+          <Key>
+            <PropertyRef Name="Voucher_ID" />
+          </Key>
+          <Property Type="String" Name="Voucher_ID" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date_Issue" />
+          <Property Type="String" Name="AuthorizedBy_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Authorized_By" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Inventory_Adjustment_Voucher_Detail" Relationship="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" FromRole="Inventory_Adjustment_Voucher" ToRole="Inventory_Adjustment_Voucher_Detail" />
+        </EntityType>
+        <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+          <End Type="LOGICModel.Inventory_Adjustment_Voucher" Role="Inventory_Adjustment_Voucher" Multiplicity="1" />
+          <End Type="LOGICModel.Inventory_Adjustment_Voucher_Detail" Role="Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inventory_Adjustment_Voucher">
+              <PropertyRef Name="Voucher_ID" />
+            </Principal>
+            <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+              <PropertyRef Name="Voucher_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LOGICModelStoreContainer" CdmEntityContainer="LOGIC_UniversityEntities">
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="LOGICModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+                <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+                <ScalarProperty Name="Contact_ID" ColumnName="Contact_ID" />
+                <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax_No" ColumnName="Fax_No" />
+                <ScalarProperty Name="Head_ID" ColumnName="Head_ID" />
+                <ScalarProperty Name="Head_Name" ColumnName="Head_Name" />
+                <ScalarProperty Name="Collection_Point" ColumnName="Collection_Point" />
+                <ScalarProperty Name="Representative_ID" ColumnName="Representative_ID" />
+                <ScalarProperty Name="Representative_Name" ColumnName="Representative_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disbursements">
+            <EntityTypeMapping TypeName="LOGICModel.Disbursement">
+              <MappingFragment StoreEntitySet="Disbursement">
+                <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Disburse_Status" ColumnName="Disburse_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disbursement_Detail">
+            <EntityTypeMapping TypeName="LOGICModel.Disbursement_Detail">
+              <MappingFragment StoreEntitySet="Disbursement_Detail">
+                <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Qty_Required" ColumnName="Qty_Required" />
+                <ScalarProperty Name="Qty_Retrieved" ColumnName="Qty_Retrieved" />
+                <ScalarProperty Name="Qty_Disbursed" ColumnName="Qty_Disbursed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generate_ID">
+            <EntityTypeMapping TypeName="LOGICModel.Generate_ID">
+              <MappingFragment StoreEntitySet="Generate_ID">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
+                <ScalarProperty Name="Last_ID" ColumnName="Last_ID" />
+                <ScalarProperty Name="Seg1" ColumnName="Seg1" />
+                <ScalarProperty Name="Seg2" ColumnName="Seg2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchase_Order">
+            <EntityTypeMapping TypeName="LOGICModel.Purchase_Order">
+              <MappingFragment StoreEntitySet="Purchase_Order">
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Purchase_Order_No" ColumnName="Purchase_Order_No" />
+                <ScalarProperty Name="Deliver_To" ColumnName="Deliver_To" />
+                <ScalarProperty Name="Expected_Date" ColumnName="Expected_Date" />
+                <ScalarProperty Name="Order_By" ColumnName="Order_By" />
+                <ScalarProperty Name="Approve_By" ColumnName="Approve_By" />
+                <ScalarProperty Name="Approve_Date" ColumnName="Approve_Date" />
+                <ScalarProperty Name="Receive_Flag" ColumnName="Receive_Flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchase_Order_Detail">
+            <EntityTypeMapping TypeName="LOGICModel.Purchase_Order_Detail">
+              <MappingFragment StoreEntitySet="Purchase_Order_Detail">
+                <ScalarProperty Name="Purchase_Order_No" ColumnName="Purchase_Order_No" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisitions">
+            <EntityTypeMapping TypeName="LOGICModel.Requisition">
+              <MappingFragment StoreEntitySet="Requisition">
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Approval_Status" ColumnName="Approval_Status" />
+                <ScalarProperty Name="Approval_By" ColumnName="Approval_By" />
+                <ScalarProperty Name="Approval_Date" ColumnName="Approval_Date" />
+                <ScalarProperty Name="Req_Status" ColumnName="Req_Status" />
+                <ScalarProperty Name="Notification" ColumnName="Notification" />
+                <ScalarProperty Name="Prior" ColumnName="Prior" />
+                <ScalarProperty Name="Rej_Comment" ColumnName="Rej_Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisition_Detail">
+            <EntityTypeMapping TypeName="LOGICModel.Requisition_Detail">
+              <MappingFragment StoreEntitySet="Requisition_Detail">
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stationary_Catalogue">
+            <EntityTypeMapping TypeName="LOGICModel.Stationary_Catalogue">
+              <MappingFragment StoreEntitySet="Stationary_Catalogue">
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Reorder_Level" ColumnName="Reorder_Level" />
+                <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockCards">
+            <EntityTypeMapping TypeName="LOGICModel.StockCard">
+              <MappingFragment StoreEntitySet="StockCard">
+                <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="first_Supplier" ColumnName="first_Supplier" />
+                <ScalarProperty Name="second_Supplier" ColumnName="second_Supplier" />
+                <ScalarProperty Name="third_Supplier" ColumnName="third_Supplier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockCard_Detail">
+            <EntityTypeMapping TypeName="LOGICModel.StockCard_Detail">
+              <MappingFragment StoreEntitySet="StockCard_Detail">
+                <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+                <ScalarProperty Name="Tran_ID" ColumnName="Tran_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Dept_Supplier" ColumnName="Dept_Supplier" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="LOGICModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+                <ScalarProperty Name="Context_Name" ColumnName="Context_Name" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Fax_No" ColumnName="Fax_No" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LOGICModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tenders">
+            <EntityTypeMapping TypeName="LOGICModel.Tender">
+              <MappingFragment StoreEntitySet="Tender">
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LOGICModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="getBalFromItemCodes">
+            <EntityTypeMapping TypeName="LOGICModel.getBalFromItemCode">
+              <MappingFragment StoreEntitySet="getBalFromItemCode">
+                <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReqLists">
+            <EntityTypeMapping TypeName="LOGICModel.ReqList">
+              <MappingFragment StoreEntitySet="ReqList">
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Retrieval_Item">
+            <EntityTypeMapping TypeName="LOGICModel.Retrieval_Item">
+              <MappingFragment StoreEntitySet="Retrieval_Item">
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Needed" ColumnName="Needed" />
+                <ScalarProperty Name="Retrieved" ColumnName="Retrieved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_Check_Existing_Stock">
+            <EntityTypeMapping TypeName="LOGICModel.view_Check_Existing_Stock">
+              <MappingFragment StoreEntitySet="view_Check_Existing_Stock">
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_PurchaseOrderForm">
+            <EntityTypeMapping TypeName="LOGICModel.view_PurchaseOrderForm">
+              <MappingFragment StoreEntitySet="view_PurchaseOrderForm">
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_ReorderItems">
+            <EntityTypeMapping TypeName="LOGICModel.view_ReorderItems">
+              <MappingFragment StoreEntitySet="view_ReorderItems">
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Reorder_Level" ColumnName="Reorder_Level" />
+                <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_RequisitionDisbursementStatus">
+            <EntityTypeMapping TypeName="LOGICModel.view_RequisitionDisbursementStatus">
+              <MappingFragment StoreEntitySet="view_RequisitionDisbursementStatus">
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Approval_Status" ColumnName="Approval_Status" />
+                <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+                <ScalarProperty Name="Disburse_Status" ColumnName="Disburse_Status" />
+                <ScalarProperty Name="Rej_Comment" ColumnName="Rej_Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Delegate_User">
+            <EntityTypeMapping TypeName="LOGICModel.Delegate_User">
+              <MappingFragment StoreEntitySet="Delegate_User">
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Del_ID" ColumnName="Del_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Retrieval_Dept">
+            <EntityTypeMapping TypeName="LOGICModel.Retrieval_Dept">
+              <MappingFragment StoreEntitySet="Retrieval_Dept">
+                <ScalarProperty Name="Retrieved" ColumnName="Retrieved" />
+                <ScalarProperty Name="Needed" ColumnName="Needed" />
+                <ScalarProperty Name="prior" ColumnName="prior" />
+                <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmp_Retrieval">
+            <EntityTypeMapping TypeName="LOGICModel.tmp_Retrieval">
+              <MappingFragment StoreEntitySet="tmp_Retrieval">
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Actual_Qty" ColumnName="Actual_Qty" />
+                <ScalarProperty Name="Request_Qty" ColumnName="Request_Qty" />
+                <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="getOutStandLists">
+            <EntityTypeMapping TypeName="LOGICModel.getOutStandList">
+              <MappingFragment StoreEntitySet="getOutStandList">
+                <ScalarProperty Name="OutStand_Qty" ColumnName="OutStand_Qty" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory_Adjustment_Voucher_Detail">
+            <EntityTypeMapping TypeName="LOGICModel.Inventory_Adjustment_Voucher_Detail">
+              <MappingFragment StoreEntitySet="Inventory_Adjustment_Voucher_Detail">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="Qty_Adjust" ColumnName="Qty_Adjust" />
+                <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+                <ScalarProperty Name="Voucher_ID" ColumnName="Voucher_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventory_Adjustment_Voucher">
+            <EntityTypeMapping TypeName="LOGICModel.Inventory_Adjustment_Voucher">
+              <MappingFragment StoreEntitySet="Inventory_Adjustment_Voucher">
+                <ScalarProperty Name="Authorized_By" ColumnName="Authorized_By" />
+                <ScalarProperty Name="AuthorizedBy_ID" ColumnName="AuthorizedBy_ID" />
+                <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
+                <ScalarProperty Name="Voucher_ID" ColumnName="Voucher_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LOGIC_University">
+        <EntityTypeShape EntityType="LOGICModel.Department" Width="1.5" PointX="10.75" PointY="2.875" Height="3.4304613562424966" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Disbursement" Width="1.5" PointX="12.25" PointY="12.25" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Disbursement_Detail" Width="1.5" PointX="14.5" PointY="12.375" Height="2.363109086155891" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Generate_ID" Width="1.5" PointX="0.75" PointY="13.875" Height="2.1496386321385703" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Purchase_Order" Width="1.5" PointX="6" PointY="0.75" Height="3.2169909022251773" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Purchase_Order_Detail" Width="1.5" PointX="8.25" PointY="5.625" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Requisition" Width="1.5" PointX="10" PointY="13.125" Height="3.8574022642771393" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Requisition_Detail" Width="1.5" PointX="12.25" PointY="15.625" Height="2.1496386321385685" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Stationary_Catalogue" Width="1.5" PointX="0.75" PointY="6.25" Height="3.0035204482078584" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.StockCard" Width="1.5" PointX="3.5" PointY="7" Height="2.5765795401732134" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.StockCard_Detail" Width="1.5" PointX="5.25" PointY="9.5" Height="2.7900499941905395" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Supplier" Width="1.5" PointX="3.75" PointY="1.25" Height="3.0035204482078512" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.sysdiagram" Width="1.5" PointX="2.75" PointY="13.875" Height="2.1496386321385774" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Tender" Width="1.5" PointX="6" PointY="5.75" Height="2.1496386321385756" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.User" Width="1.5" PointX="7.75" PointY="12" Height="3.2169909022251773" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.getBalFromItemCode" Width="1.5" PointX="4.75" PointY="13.875" Height="1.9361681781212496" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.ReqList" Width="1.5" PointX="12.75" PointY="2.875" Height="1.9361681781212496" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.Retrieval_Item" Width="1.5" PointX="12.75" PointY="5.875" Height="1.7226977241039307" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.view_Check_Existing_Stock" Width="1.5" PointX="12.75" PointY="8.875" Height="2.149638632138565" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.view_PurchaseOrderForm" Width="1.5" PointX="14.75" PointY="2.875" Height="2.1496386321385614" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.view_ReorderItems" Width="1.5" PointX="0.75" PointY="16.875" Height="2.3631090861559017" IsExpanded="true" />
+        <EntityTypeShape EntityType="LOGICModel.view_RequisitionDisbursementStatus" Width="1.5" PointX="2.75" PointY="16.875" Height="2.5765795401732134" IsExpanded="true" />
+        <AssociationConnector Association="LOGICModel.FK_Disbursement_Detail_Disbursement" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.75" PointY="13.556554543077946" />
+          <ConnectorPoint PointX="14.5" PointY="13.556554543077946" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Disbursement_Requisition" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="13.975789770086607" />
+          <ConnectorPoint PointX="12.25" PointY="13.975789770086607" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Purchase_Order_Detail_Purchase_Order" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="3.9669909022251773" />
+          <ConnectorPoint PointX="7.875" PointY="4.3419909022251773" />
+          <ConnectorPoint PointX="7.875" PointY="6.9132897700866067" />
+          <ConnectorPoint PointX="8.25" PointY="6.9132897700866067" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Purchase_Order_Supplier" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="2.6084954511125886" />
+          <ConnectorPoint PointX="6" PointY="2.6084954511125886" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Requisition_Detail_Requisition" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.5" PointY="16.303701132138571" />
+          <ConnectorPoint PointX="12.25" PointY="16.303701132138571" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Requisition_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="14.170995451112589" />
+          <ConnectorPoint PointX="10" PointY="14.170995451112589" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_StockCard_Stationary_Catalogue" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.1267602241039274" />
+          <ConnectorPoint PointX="3.5" PointY="8.1267602241039274" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Tender_Stationary_Catalogue1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.59375" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="6.5937499999999991" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="6.59375" />
+          <ConnectorPoint PointX="6" PointY="6.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_StockCard_Detail_StockCard" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.25" PointY="9.5765795401732134" />
+          <ConnectorPoint PointX="4.25" PointY="10.89502499709527" />
+          <ConnectorPoint PointX="5.25" PointY="10.89502499709527" />
+        </AssociationConnector>
+        <AssociationConnector Association="LOGICModel.FK_Tender_Supplier" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="4.2535204482078512" />
+          <ConnectorPoint PointX="5.625" PointY="4.6285204482078512" />
+          <ConnectorPoint PointX="6.75" PointY="4.6285204482078512" />
+          <ConnectorPoint PointX="6.75" PointY="5.75" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LOGICModel.Delegate_User" Width="1.5" PointX="10" PointY="9.5" Height="2.1496386321385614" />
+        <AssociationConnector Association="LOGICModel.FK_Delegate_User_Users" >
+          <ConnectorPoint PointX="8.5" PointY="12" />
+          <ConnectorPoint PointX="8.5" PointY="10.574819316069281" />
+          <ConnectorPoint PointX="10" PointY="10.574819316069281" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LOGICModel.Retrieval_Dept" Width="1.5" PointX="15.375" PointY="6.75" Height="2.1496386321385614" />
+        <EntityTypeShape EntityType="LOGICModel.tmp_Retrieval" Width="1.5" PointX="14.375" PointY="15.75" Height="2.5765795401732134" />
+        <EntityTypeShape EntityType="LOGICModel.getOutStandList" Width="1.5" PointX="15.375" PointY="9.75" Height="1.7226977241039378" />
+        <EntityTypeShape EntityType="LOGICModel.Inventory_Adjustment_Voucher_Detail" Width="2.75" PointX="8" PointY="0.75" Height="2.5765795401732134" />
+        <AssociationConnector Association="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" >
+          <ConnectorPoint PointX="2.25" PointY="7.3602551120519637" />
+          <ConnectorPoint PointX="3.25" PointY="7.3602551120519637" />
+          <ConnectorPoint PointX="3.25" PointY="5.375" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="5.3749999999999991" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="5.375" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="5.3749999999999991" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="5.375" />
+          <ConnectorPoint PointX="9.3749995000000013" PointY="5.375" />
+          <ConnectorPoint PointX="9.3749995000000013" PointY="3.3265795401732121" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LOGICModel.Inventory_Adjustment_Voucher" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1496386321385614" />
+        <AssociationConnector Association="LOGICModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" >
+          <ConnectorPoint PointX="2.25" PointY="0.87615284615384614" />
+          <ConnectorPoint PointX="2.625" PointY="0.50115284615384592" />
+          <ConnectorPoint PointX="2.625" PointY="0.375" />
+          <ConnectorPoint PointX="7.6269809842616727" PointY="0.375" />
+          <ConnectorPoint PointX="8.0019809842616727" PointY="0.75" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

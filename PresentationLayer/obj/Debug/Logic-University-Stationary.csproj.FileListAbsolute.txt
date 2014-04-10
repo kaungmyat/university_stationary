@@ -1,0 +1,49 @@
+D:\AD-PROJECT\LOGIC-UNIVERSITY\Logic-University-Stationary\obj\Debug\ResolveAssemblyReference.cache
+D:\AD-PROJECT\LOGIC-UNIVERSITY\Logic-University-Stationary\bin\Logic-University-Stationary.dll
+D:\AD-PROJECT\LOGIC-UNIVERSITY\Logic-University-Stationary\bin\Logic-University-Stationary.pdb
+D:\AD-PROJECT\LOGIC-UNIVERSITY\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.dll
+D:\AD-PROJECT\LOGIC-UNIVERSITY\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.pdb
+F:\LOGIC-UNIVERSITY\Logic-University-Stationary\bin\Logic-University-Stationary.dll
+F:\LOGIC-UNIVERSITY\Logic-University-Stationary\bin\Logic-University-Stationary.pdb
+F:\LOGIC-UNIVERSITY\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.dll
+F:\LOGIC-UNIVERSITY\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\Logic-University-Stationary.dll
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\Logic-University-Stationary.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\BLL.dll
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\DAL.dll
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\BLL.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\bin\DAL.pdb
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.dll
+C:\Users\Kaung Myat\Documents\ADProject\Su_Mon_Proj\Logic-University-Stationary\obj\Debug\Logic-University-Stationary.pdb
+D:\ADProject\Logic-University-Stationary(PL)\obj\Debug\Logic-University-Stationary.csprojResolveAssemblyReference.cache
+D:\ADProject\Logic-University-Stationary(PL)\bin\Logic-University-Stationary.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\Logic-University-Stationary.pdb
+D:\ADProject\Logic-University-Stationary(PL)\bin\AjaxControlToolkit.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\AjaxMin.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\BLL.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\DAL.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\Microsoft.WindowsAzure.Storage.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\HtmlAgilityPack.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\BLL.pdb
+D:\ADProject\Logic-University-Stationary(PL)\bin\DAL.pdb
+D:\ADProject\Logic-University-Stationary(PL)\bin\AjaxControlToolkit.pdb
+D:\ADProject\Logic-University-Stationary(PL)\bin\Microsoft.WindowsAzure.Storage.xml
+D:\ADProject\Logic-University-Stationary(PL)\bin\ar\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\cs\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\de\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\es\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\fr\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\he\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\hi\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\it\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\ja\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\ko\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\nl\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\pt\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\ru\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\ADProject\Logic-University-Stationary(PL)\obj\Debug\Logic-University-Stationary.dll
+D:\ADProject\Logic-University-Stationary(PL)\obj\Debug\Logic-University-Stationary.pdb

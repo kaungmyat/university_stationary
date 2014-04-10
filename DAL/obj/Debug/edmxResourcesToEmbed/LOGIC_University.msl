@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LOGICModelStoreContainer" CdmEntityContainer="LOGIC_UniversityEntities">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="LOGICModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="Contact_ID" ColumnName="Contact_ID" />
+          <ScalarProperty Name="Contact_Name" ColumnName="Contact_Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax_No" ColumnName="Fax_No" />
+          <ScalarProperty Name="Head_ID" ColumnName="Head_ID" />
+          <ScalarProperty Name="Head_Name" ColumnName="Head_Name" />
+          <ScalarProperty Name="Collection_Point" ColumnName="Collection_Point" />
+          <ScalarProperty Name="Representative_ID" ColumnName="Representative_ID" />
+          <ScalarProperty Name="Representative_Name" ColumnName="Representative_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disbursements">
+      <EntityTypeMapping TypeName="LOGICModel.Disbursement">
+        <MappingFragment StoreEntitySet="Disbursement">
+          <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Disburse_Status" ColumnName="Disburse_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disbursement_Detail">
+      <EntityTypeMapping TypeName="LOGICModel.Disbursement_Detail">
+        <MappingFragment StoreEntitySet="Disbursement_Detail">
+          <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Qty_Required" ColumnName="Qty_Required" />
+          <ScalarProperty Name="Qty_Retrieved" ColumnName="Qty_Retrieved" />
+          <ScalarProperty Name="Qty_Disbursed" ColumnName="Qty_Disbursed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generate_ID">
+      <EntityTypeMapping TypeName="LOGICModel.Generate_ID">
+        <MappingFragment StoreEntitySet="Generate_ID">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
+          <ScalarProperty Name="Last_ID" ColumnName="Last_ID" />
+          <ScalarProperty Name="Seg1" ColumnName="Seg1" />
+          <ScalarProperty Name="Seg2" ColumnName="Seg2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Order">
+      <EntityTypeMapping TypeName="LOGICModel.Purchase_Order">
+        <MappingFragment StoreEntitySet="Purchase_Order">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Purchase_Order_No" ColumnName="Purchase_Order_No" />
+          <ScalarProperty Name="Deliver_To" ColumnName="Deliver_To" />
+          <ScalarProperty Name="Expected_Date" ColumnName="Expected_Date" />
+          <ScalarProperty Name="Order_By" ColumnName="Order_By" />
+          <ScalarProperty Name="Approve_By" ColumnName="Approve_By" />
+          <ScalarProperty Name="Approve_Date" ColumnName="Approve_Date" />
+          <ScalarProperty Name="Receive_Flag" ColumnName="Receive_Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Order_Detail">
+      <EntityTypeMapping TypeName="LOGICModel.Purchase_Order_Detail">
+        <MappingFragment StoreEntitySet="Purchase_Order_Detail">
+          <ScalarProperty Name="Purchase_Order_No" ColumnName="Purchase_Order_No" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisitions">
+      <EntityTypeMapping TypeName="LOGICModel.Requisition">
+        <MappingFragment StoreEntitySet="Requisition">
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Approval_Status" ColumnName="Approval_Status" />
+          <ScalarProperty Name="Approval_By" ColumnName="Approval_By" />
+          <ScalarProperty Name="Approval_Date" ColumnName="Approval_Date" />
+          <ScalarProperty Name="Req_Status" ColumnName="Req_Status" />
+          <ScalarProperty Name="Notification" ColumnName="Notification" />
+          <ScalarProperty Name="Prior" ColumnName="Prior" />
+          <ScalarProperty Name="Rej_Comment" ColumnName="Rej_Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisition_Detail">
+      <EntityTypeMapping TypeName="LOGICModel.Requisition_Detail">
+        <MappingFragment StoreEntitySet="Requisition_Detail">
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stationary_Catalogue">
+      <EntityTypeMapping TypeName="LOGICModel.Stationary_Catalogue">
+        <MappingFragment StoreEntitySet="Stationary_Catalogue">
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Reorder_Level" ColumnName="Reorder_Level" />
+          <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockCards">
+      <EntityTypeMapping TypeName="LOGICModel.StockCard">
+        <MappingFragment StoreEntitySet="StockCard">
+          <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="first_Supplier" ColumnName="first_Supplier" />
+          <ScalarProperty Name="second_Supplier" ColumnName="second_Supplier" />
+          <ScalarProperty Name="third_Supplier" ColumnName="third_Supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockCard_Detail">
+      <EntityTypeMapping TypeName="LOGICModel.StockCard_Detail">
+        <MappingFragment StoreEntitySet="StockCard_Detail">
+          <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+          <ScalarProperty Name="Tran_ID" ColumnName="Tran_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Dept_Supplier" ColumnName="Dept_Supplier" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="LOGICModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+          <ScalarProperty Name="Context_Name" ColumnName="Context_Name" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Fax_No" ColumnName="Fax_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="LOGICModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tenders">
+      <EntityTypeMapping TypeName="LOGICModel.Tender">
+        <MappingFragment StoreEntitySet="Tender">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="LOGICModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="getBalFromItemCodes">
+      <EntityTypeMapping TypeName="LOGICModel.getBalFromItemCode">
+        <MappingFragment StoreEntitySet="getBalFromItemCode">
+          <ScalarProperty Name="StockCard_ID" ColumnName="StockCard_ID" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReqLists">
+      <EntityTypeMapping TypeName="LOGICModel.ReqList">
+        <MappingFragment StoreEntitySet="ReqList">
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retrieval_Item">
+      <EntityTypeMapping TypeName="LOGICModel.Retrieval_Item">
+        <MappingFragment StoreEntitySet="Retrieval_Item">
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Needed" ColumnName="Needed" />
+          <ScalarProperty Name="Retrieved" ColumnName="Retrieved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_Check_Existing_Stock">
+      <EntityTypeMapping TypeName="LOGICModel.view_Check_Existing_Stock">
+        <MappingFragment StoreEntitySet="view_Check_Existing_Stock">
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_PurchaseOrderForm">
+      <EntityTypeMapping TypeName="LOGICModel.view_PurchaseOrderForm">
+        <MappingFragment StoreEntitySet="view_PurchaseOrderForm">
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_ReorderItems">
+      <EntityTypeMapping TypeName="LOGICModel.view_ReorderItems">
+        <MappingFragment StoreEntitySet="view_ReorderItems">
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Reorder_Level" ColumnName="Reorder_Level" />
+          <ScalarProperty Name="Reorder_Qty" ColumnName="Reorder_Qty" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_RequisitionDisbursementStatus">
+      <EntityTypeMapping TypeName="LOGICModel.view_RequisitionDisbursementStatus">
+        <MappingFragment StoreEntitySet="view_RequisitionDisbursementStatus">
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Approval_Status" ColumnName="Approval_Status" />
+          <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
+          <ScalarProperty Name="Disburse_Status" ColumnName="Disburse_Status" />
+          <ScalarProperty Name="Rej_Comment" ColumnName="Rej_Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delegate_User">
+      <EntityTypeMapping TypeName="LOGICModel.Delegate_User">
+        <MappingFragment StoreEntitySet="Delegate_User">
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Del_ID" ColumnName="Del_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retrieval_Dept">
+      <EntityTypeMapping TypeName="LOGICModel.Retrieval_Dept">
+        <MappingFragment StoreEntitySet="Retrieval_Dept">
+          <ScalarProperty Name="Retrieved" ColumnName="Retrieved" />
+          <ScalarProperty Name="Needed" ColumnName="Needed" />
+          <ScalarProperty Name="prior" ColumnName="prior" />
+          <ScalarProperty Name="Req_Form_No" ColumnName="Req_Form_No" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmp_Retrieval">
+      <EntityTypeMapping TypeName="LOGICModel.tmp_Retrieval">
+        <MappingFragment StoreEntitySet="tmp_Retrieval">
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Actual_Qty" ColumnName="Actual_Qty" />
+          <ScalarProperty Name="Request_Qty" ColumnName="Request_Qty" />
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="getOutStandLists">
+      <EntityTypeMapping TypeName="LOGICModel.getOutStandList">
+        <MappingFragment StoreEntitySet="getOutStandList">
+          <ScalarProperty Name="OutStand_Qty" ColumnName="OutStand_Qty" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Disbursement_ID" ColumnName="Disbursement_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Adjustment_Voucher_Detail">
+      <EntityTypeMapping TypeName="LOGICModel.Inventory_Adjustment_Voucher_Detail">
+        <MappingFragment StoreEntitySet="Inventory_Adjustment_Voucher_Detail">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Qty_Adjust" ColumnName="Qty_Adjust" />
+          <ScalarProperty Name="Item_Code" ColumnName="Item_Code" />
+          <ScalarProperty Name="Voucher_ID" ColumnName="Voucher_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventory_Adjustment_Voucher">
+      <EntityTypeMapping TypeName="LOGICModel.Inventory_Adjustment_Voucher">
+        <MappingFragment StoreEntitySet="Inventory_Adjustment_Voucher">
+          <ScalarProperty Name="Authorized_By" ColumnName="Authorized_By" />
+          <ScalarProperty Name="AuthorizedBy_ID" ColumnName="AuthorizedBy_ID" />
+          <ScalarProperty Name="Date_Issue" ColumnName="Date_Issue" />
+          <ScalarProperty Name="Voucher_ID" ColumnName="Voucher_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

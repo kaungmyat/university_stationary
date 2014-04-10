@@ -1,0 +1,9 @@
+﻿
+    @media screen and (max-device-width:600px) {
+
+	html, body, input {
+		font-size: 150%;
+		color: red;
+	}
+
+}

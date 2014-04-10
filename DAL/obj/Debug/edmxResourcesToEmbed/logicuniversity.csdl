@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LOGIC_UniversityModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="LOGIC_UniversityEntities2" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Delegate_User" EntityType="LOGIC_UniversityModel.Delegate_User" />
+    <EntitySet Name="Departments" EntityType="LOGIC_UniversityModel.Department" />
+    <EntitySet Name="Disbursements" EntityType="LOGIC_UniversityModel.Disbursement" />
+    <EntitySet Name="Disbursement_Detail" EntityType="LOGIC_UniversityModel.Disbursement_Detail" />
+    <EntitySet Name="Generate_ID" EntityType="LOGIC_UniversityModel.Generate_ID" />
+    <EntitySet Name="Inventory_Adjustment_Voucher" EntityType="LOGIC_UniversityModel.Inventory_Adjustment_Voucher" />
+    <EntitySet Name="Inventory_Adjustment_Voucher_Detail" EntityType="LOGIC_UniversityModel.Inventory_Adjustment_Voucher_Detail" />
+    <EntitySet Name="Purchase_Order" EntityType="LOGIC_UniversityModel.Purchase_Order" />
+    <EntitySet Name="Purchase_Order_Detail" EntityType="LOGIC_UniversityModel.Purchase_Order_Detail" />
+    <EntitySet Name="Requisitions" EntityType="LOGIC_UniversityModel.Requisition" />
+    <EntitySet Name="Requisition_Detail" EntityType="LOGIC_UniversityModel.Requisition_Detail" />
+    <EntitySet Name="Stationary_Catalogue" EntityType="LOGIC_UniversityModel.Stationary_Catalogue" />
+    <EntitySet Name="StockCards" EntityType="LOGIC_UniversityModel.StockCard" />
+    <EntitySet Name="StockCard_Detail" EntityType="LOGIC_UniversityModel.StockCard_Detail" />
+    <EntitySet Name="Suppliers" EntityType="LOGIC_UniversityModel.Supplier" />
+    <EntitySet Name="sysdiagrams" EntityType="LOGIC_UniversityModel.sysdiagram" />
+    <EntitySet Name="Tenders" EntityType="LOGIC_UniversityModel.Tender" />
+    <EntitySet Name="Users" EntityType="LOGIC_UniversityModel.User" />
+    <EntitySet Name="view_Check_Existing_Stock" EntityType="LOGIC_UniversityModel.view_Check_Existing_Stock" />
+    <EntitySet Name="view_PurchaseOrderForm" EntityType="LOGIC_UniversityModel.view_PurchaseOrderForm" />
+    <EntitySet Name="view_ReorderItems" EntityType="LOGIC_UniversityModel.view_ReorderItems" />
+    <EntitySet Name="view_RequisitionDisbursementStatus" EntityType="LOGIC_UniversityModel.view_RequisitionDisbursementStatus" />
+    <AssociationSet Name="FK_Delegate_User_Users" Association="LOGIC_UniversityModel.FK_Delegate_User_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Delegate_User" EntitySet="Delegate_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disbursement_Detail_Disbursement" Association="LOGIC_UniversityModel.FK_Disbursement_Detail_Disbursement">
+      <End Role="Disbursement" EntitySet="Disbursements" />
+      <End Role="Disbursement_Detail" EntitySet="Disbursement_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Disbursement_Requisition" Association="LOGIC_UniversityModel.FK_Disbursement_Requisition">
+      <End Role="Requisition" EntitySet="Requisitions" />
+      <End Role="Disbursement" EntitySet="Disbursements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" Association="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+      <End Role="Inventory_Adjustment_Voucher" EntitySet="Inventory_Adjustment_Voucher" />
+      <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" Association="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+      <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+      <End Role="Inventory_Adjustment_Voucher_Detail" EntitySet="Inventory_Adjustment_Voucher_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Order_Detail_Purchase_Order" Association="LOGIC_UniversityModel.FK_Purchase_Order_Detail_Purchase_Order">
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+      <End Role="Purchase_Order_Detail" EntitySet="Purchase_Order_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchase_Order_Supplier" Association="LOGIC_UniversityModel.FK_Purchase_Order_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisition_Detail_Requisition" Association="LOGIC_UniversityModel.FK_Requisition_Detail_Requisition">
+      <End Role="Requisition" EntitySet="Requisitions" />
+      <End Role="Requisition_Detail" EntitySet="Requisition_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Requisition_Users" Association="LOGIC_UniversityModel.FK_Requisition_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Requisition" EntitySet="Requisitions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockCard_Stationary_Catalogue" Association="LOGIC_UniversityModel.FK_StockCard_Stationary_Catalogue">
+      <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+      <End Role="StockCard" EntitySet="StockCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tender_Stationary_Catalogue1" Association="LOGIC_UniversityModel.FK_Tender_Stationary_Catalogue1">
+      <End Role="Stationary_Catalogue" EntitySet="Stationary_Catalogue" />
+      <End Role="Tender" EntitySet="Tenders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockCard_Detail_StockCard" Association="LOGIC_UniversityModel.FK_StockCard_Detail_StockCard">
+      <End Role="StockCard" EntitySet="StockCards" />
+      <End Role="StockCard_Detail" EntitySet="StockCard_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tender_Supplier" Association="LOGIC_UniversityModel.FK_Tender_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Tender" EntitySet="Tenders" />
+    </AssociationSet>
+    <EntitySet Name="Retrieval_Item" EntityType="LOGIC_UniversityModel.Retrieval_Item" />
+  </EntityContainer>
+  <EntityType Name="Delegate_User">
+    <Key>
+      <PropertyRef Name="Del_ID" />
+    </Key>
+    <Property Type="Int32" Name="Del_ID" Nullable="false" />
+    <Property Type="String" Name="Emp_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="FromDate" />
+    <Property Type="DateTime" Name="ToDate" />
+    <NavigationProperty Name="User" Relationship="LOGIC_UniversityModel.FK_Delegate_User_Users" FromRole="Delegate_User" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Dept_ID" />
+    </Key>
+    <Property Type="String" Name="Dept_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dept_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contact_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contact_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax_No" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Head_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Head_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Collection_Point" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Representative_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Representative_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Disbursement">
+    <Key>
+      <PropertyRef Name="Disbursement_ID" />
+    </Key>
+    <Property Type="String" Name="Disbursement_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Req_Form_No" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dept_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="Disburse_Status" />
+    <NavigationProperty Name="Disbursement_Detail" Relationship="LOGIC_UniversityModel.FK_Disbursement_Detail_Disbursement" FromRole="Disbursement" ToRole="Disbursement_Detail" />
+    <NavigationProperty Name="Requisition" Relationship="LOGIC_UniversityModel.FK_Disbursement_Requisition" FromRole="Disbursement" ToRole="Requisition" />
+  </EntityType>
+  <EntityType Name="Disbursement_Detail">
+    <Key>
+      <PropertyRef Name="Disbursement_ID" />
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Disbursement_ID" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Qty_Required" />
+    <Property Type="Int32" Name="Qty_Retrieved" />
+    <Property Type="Int32" Name="Qty_Disbursed" />
+    <NavigationProperty Name="Disbursement" Relationship="LOGIC_UniversityModel.FK_Disbursement_Detail_Disbursement" FromRole="Disbursement_Detail" ToRole="Disbursement" />
+  </EntityType>
+  <EntityType Name="Generate_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Table_Name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Last_ID" />
+    <Property Type="Int32" Name="Seg1" />
+    <Property Type="Int32" Name="Seg2" />
+  </EntityType>
+  <EntityType Name="Inventory_Adjustment_Voucher">
+    <Key>
+      <PropertyRef Name="Voucher_ID" />
+    </Key>
+    <Property Type="String" Name="Voucher_ID" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date_Issue" />
+    <Property Type="String" Name="Supervisor_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Authorized_By" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventory_Adjustment_Voucher_Detail" Relationship="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" FromRole="Inventory_Adjustment_Voucher" ToRole="Inventory_Adjustment_Voucher_Detail" />
+  </EntityType>
+  <EntityType Name="Inventory_Adjustment_Voucher_Detail">
+    <Key>
+      <PropertyRef Name="Voucher_ID" />
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Voucher_ID" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Qty_Adjust" />
+    <Property Type="String" Name="Reason" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventory_Adjustment_Voucher" Relationship="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher" FromRole="Inventory_Adjustment_Voucher_Detail" ToRole="Inventory_Adjustment_Voucher" />
+    <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" FromRole="Inventory_Adjustment_Voucher_Detail" ToRole="Stationary_Catalogue" />
+  </EntityType>
+  <EntityType Name="Purchase_Order">
+    <Key>
+      <PropertyRef Name="Purchase_Order_No" />
+    </Key>
+    <Property Type="String" Name="Supplier_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Purchase_Order_No" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Deliver_To" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Expected_Date" />
+    <Property Type="String" Name="Order_By" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Approve_By" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Approve_Date" />
+    <Property Type="Boolean" Name="Receive_Flag" />
+    <NavigationProperty Name="Purchase_Order_Detail" Relationship="LOGIC_UniversityModel.FK_Purchase_Order_Detail_Purchase_Order" FromRole="Purchase_Order" ToRole="Purchase_Order_Detail" />
+    <NavigationProperty Name="Supplier" Relationship="LOGIC_UniversityModel.FK_Purchase_Order_Supplier" FromRole="Purchase_Order" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Purchase_Order_Detail">
+    <Key>
+      <PropertyRef Name="Purchase_Order_No" />
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Purchase_Order_No" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Qty" />
+    <Property Type="Decimal" Name="Price" Precision="8" Scale="2" />
+    <Property Type="Decimal" Name="Amount" Precision="8" Scale="2" />
+    <NavigationProperty Name="Purchase_Order" Relationship="LOGIC_UniversityModel.FK_Purchase_Order_Detail_Purchase_Order" FromRole="Purchase_Order_Detail" ToRole="Purchase_Order" />
+  </EntityType>
+  <EntityType Name="Requisition">
+    <Key>
+      <PropertyRef Name="Req_Form_No" />
+    </Key>
+    <Property Type="String" Name="Req_Form_No" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Request_Date" />
+    <Property Type="String" Name="Emp_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Approval_Status" />
+    <Property Type="String" Name="Approval_By" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Approval_Date" />
+    <Property Type="Boolean" Name="Req_Status" />
+    <Property Type="Boolean" Name="Notification" />
+    <Property Type="Boolean" Name="Prior" />
+    <Property Type="String" Name="Rej_Comment" MaxLength="200" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Disbursements" Relationship="LOGIC_UniversityModel.FK_Disbursement_Requisition" FromRole="Requisition" ToRole="Disbursement" />
+    <NavigationProperty Name="Requisition_Detail" Relationship="LOGIC_UniversityModel.FK_Requisition_Detail_Requisition" FromRole="Requisition" ToRole="Requisition_Detail" />
+    <NavigationProperty Name="User" Relationship="LOGIC_UniversityModel.FK_Requisition_Users" FromRole="Requisition" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Requisition_Detail">
+    <Key>
+      <PropertyRef Name="Req_Form_No" />
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Req_Form_No" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Qty" />
+    <NavigationProperty Name="Requisition" Relationship="LOGIC_UniversityModel.FK_Requisition_Detail_Requisition" FromRole="Requisition_Detail" ToRole="Requisition" />
+  </EntityType>
+  <EntityType Name="Stationary_Catalogue">
+    <Key>
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Reorder_Level" />
+    <Property Type="Int32" Name="Reorder_Qty" />
+    <Property Type="String" Name="UOM" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventory_Adjustment_Voucher_Detail" Relationship="LOGIC_UniversityModel.FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue" FromRole="Stationary_Catalogue" ToRole="Inventory_Adjustment_Voucher_Detail" />
+    <NavigationProperty Name="StockCards" Relationship="LOGIC_UniversityModel.FK_StockCard_Stationary_Catalogue" FromRole="Stationary_Catalogue" ToRole="StockCard" />
+    <NavigationProperty Name="Tenders" Relationship="LOGIC_UniversityModel.FK_Tender_Stationary_Catalogue1" FromRole="Stationary_Catalogue" ToRole="Tender" />
+  </EntityType>
+  <EntityType Name="StockCard">
+    <Key>
+      <PropertyRef Name="StockCard_ID" />
+    </Key>
+    <Property Type="String" Name="StockCard_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="first_Supplier" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="second_Supplier" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="third_Supplier" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGIC_UniversityModel.FK_StockCard_Stationary_Catalogue" FromRole="StockCard" ToRole="Stationary_Catalogue" />
+    <NavigationProperty Name="StockCard_Detail" Relationship="LOGIC_UniversityModel.FK_StockCard_Detail_StockCard" FromRole="StockCard" ToRole="StockCard_Detail" />
+  </EntityType>
+  <EntityType Name="StockCard_Detail">
+    <Key>
+      <PropertyRef Name="StockCard_ID" />
+      <PropertyRef Name="Tran_ID" />
+    </Key>
+    <Property Type="String" Name="StockCard_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Tran_ID" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Emp_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="String" Name="Dept_Supplier" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Qty" />
+    <Property Type="Int32" Name="Balance" />
+    <NavigationProperty Name="StockCard" Relationship="LOGIC_UniversityModel.FK_StockCard_Detail_StockCard" FromRole="StockCard_Detail" ToRole="StockCard" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Type="String" Name="Supplier_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Supplier_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Context_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone_No" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Fax_No" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchase_Order" Relationship="LOGIC_UniversityModel.FK_Purchase_Order_Supplier" FromRole="Supplier" ToRole="Purchase_Order" />
+    <NavigationProperty Name="Tenders" Relationship="LOGIC_UniversityModel.FK_Tender_Supplier" FromRole="Supplier" ToRole="Tender" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tender">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Supplier_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Price" Precision="8" Scale="2" />
+    <NavigationProperty Name="Stationary_Catalogue" Relationship="LOGIC_UniversityModel.FK_Tender_Stationary_Catalogue1" FromRole="Tender" ToRole="Stationary_Catalogue" />
+    <NavigationProperty Name="Supplier" Relationship="LOGIC_UniversityModel.FK_Tender_Supplier" FromRole="Tender" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Emp_ID" />
+    </Key>
+    <Property Type="String" Name="Emp_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Emp_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Dept_ID" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DOB" />
+    <Property Type="String" Name="Role" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Delegate_User" Relationship="LOGIC_UniversityModel.FK_Delegate_User_Users" FromRole="User" ToRole="Delegate_User" />
+    <NavigationProperty Name="Requisitions" Relationship="LOGIC_UniversityModel.FK_Requisition_Users" FromRole="User" ToRole="Requisition" />
+  </EntityType>
+  <EntityType Name="view_Check_Existing_Stock">
+    <Key>
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Balance" />
+    <Property Type="String" Name="UOM" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_PurchaseOrderForm">
+    <Key>
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DESCRIPTION" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Reorder_Qty" />
+    <Property Type="Decimal" Name="Price" Precision="8" Scale="2" />
+    <Property Type="Decimal" Name="Amount" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="view_ReorderItems">
+    <Key>
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Balance" />
+    <Property Type="Int32" Name="Reorder_Level" />
+    <Property Type="Int32" Name="Reorder_Qty" />
+    <Property Type="String" Name="UOM" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="view_RequisitionDisbursementStatus">
+    <Key>
+      <PropertyRef Name="Emp_ID" />
+      <PropertyRef Name="Req_Form_No" />
+      <PropertyRef Name="Disburse_Status" />
+      <PropertyRef Name="Rej_Comment" />
+    </Key>
+    <Property Type="String" Name="Emp_ID" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Emp_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Req_Form_No" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Approval_Status" />
+    <Property Type="DateTime" Name="Request_Date" />
+    <Property Type="Int32" Name="Disburse_Status" Nullable="false" />
+    <Property Type="String" Name="Rej_Comment" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Delegate_User_Users">
+    <End Type="LOGIC_UniversityModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="LOGIC_UniversityModel.Delegate_User" Role="Delegate_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Emp_ID" />
+      </Principal>
+      <Dependent Role="Delegate_User">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disbursement_Detail_Disbursement">
+    <End Type="LOGIC_UniversityModel.Disbursement" Role="Disbursement" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Disbursement_Detail" Role="Disbursement_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disbursement">
+        <PropertyRef Name="Disbursement_ID" />
+      </Principal>
+      <Dependent Role="Disbursement_Detail">
+        <PropertyRef Name="Disbursement_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Disbursement_Requisition">
+    <End Type="LOGIC_UniversityModel.Requisition" Role="Requisition" Multiplicity="0..1" />
+    <End Type="LOGIC_UniversityModel.Disbursement" Role="Disbursement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requisition">
+        <PropertyRef Name="Req_Form_No" />
+      </Principal>
+      <Dependent Role="Disbursement">
+        <PropertyRef Name="Req_Form_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Inventory_Adjustment_Voucher">
+    <End Type="LOGIC_UniversityModel.Inventory_Adjustment_Voucher" Role="Inventory_Adjustment_Voucher" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Inventory_Adjustment_Voucher_Detail" Role="Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Inventory_Adjustment_Voucher">
+        <PropertyRef Name="Voucher_ID" />
+      </Principal>
+      <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+        <PropertyRef Name="Voucher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventory_Adjustment_Voucher_Detail_Stationary_Catalogue">
+    <End Type="LOGIC_UniversityModel.Stationary_Catalogue" Role="Stationary_Catalogue" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Inventory_Adjustment_Voucher_Detail" Role="Inventory_Adjustment_Voucher_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stationary_Catalogue">
+        <PropertyRef Name="Item_Code" />
+      </Principal>
+      <Dependent Role="Inventory_Adjustment_Voucher_Detail">
+        <PropertyRef Name="Item_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Order_Detail_Purchase_Order">
+    <End Type="LOGIC_UniversityModel.Purchase_Order" Role="Purchase_Order" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Purchase_Order_Detail" Role="Purchase_Order_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_Order">
+        <PropertyRef Name="Purchase_Order_No" />
+      </Principal>
+      <Dependent Role="Purchase_Order_Detail">
+        <PropertyRef Name="Purchase_Order_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchase_Order_Supplier">
+    <End Type="LOGIC_UniversityModel.Supplier" Role="Supplier" Multiplicity="0..1" />
+    <End Type="LOGIC_UniversityModel.Purchase_Order" Role="Purchase_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisition_Detail_Requisition">
+    <End Type="LOGIC_UniversityModel.Requisition" Role="Requisition" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Requisition_Detail" Role="Requisition_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requisition">
+        <PropertyRef Name="Req_Form_No" />
+      </Principal>
+      <Dependent Role="Requisition_Detail">
+        <PropertyRef Name="Req_Form_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Requisition_Users">
+    <End Type="LOGIC_UniversityModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="LOGIC_UniversityModel.Requisition" Role="Requisition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Emp_ID" />
+      </Principal>
+      <Dependent Role="Requisition">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockCard_Stationary_Catalogue">
+    <End Type="LOGIC_UniversityModel.Stationary_Catalogue" Role="Stationary_Catalogue" Multiplicity="0..1" />
+    <End Type="LOGIC_UniversityModel.StockCard" Role="StockCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stationary_Catalogue">
+        <PropertyRef Name="Item_Code" />
+      </Principal>
+      <Dependent Role="StockCard">
+        <PropertyRef Name="Item_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tender_Stationary_Catalogue1">
+    <End Type="LOGIC_UniversityModel.Stationary_Catalogue" Role="Stationary_Catalogue" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Tender" Role="Tender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stationary_Catalogue">
+        <PropertyRef Name="Item_Code" />
+      </Principal>
+      <Dependent Role="Tender">
+        <PropertyRef Name="Item_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockCard_Detail_StockCard">
+    <End Type="LOGIC_UniversityModel.StockCard" Role="StockCard" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.StockCard_Detail" Role="StockCard_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StockCard">
+        <PropertyRef Name="StockCard_ID" />
+      </Principal>
+      <Dependent Role="StockCard_Detail">
+        <PropertyRef Name="StockCard_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tender_Supplier">
+    <End Type="LOGIC_UniversityModel.Supplier" Role="Supplier" Multiplicity="1" />
+    <End Type="LOGIC_UniversityModel.Tender" Role="Tender" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Tender">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Retrieval_Item">
+    <Key>
+      <PropertyRef Name="Item_Code" />
+    </Key>
+    <Property Type="String" Name="Item_Code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Needed" />
+    <Property Type="Int32" Name="Retrieved" />
+  </EntityType>
+</Schema>

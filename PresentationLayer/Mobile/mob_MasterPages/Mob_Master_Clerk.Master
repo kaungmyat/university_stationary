@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mob_Master_Clerk.master.cs" Inherits="Logic_University_Stationary.Mobile_Pages.mob_MasterPages.Mob_Master_Clerk" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <link rel="Stylesheet" href="Mobile/CSS_Mobile/mobile.css" type="text/css""/>
+
+   <%-- <script type="text/javascript">
+        $(function () {
+            $('.menu').click(function () {
+                alert('hello inbox ' + $('.hiddenclass').val());
+//                var cntMail = $('.hiddenclass').val();
+                //                alert('hello ' + cntMail);
+//                $('#printCnt').html(cntMail);
+            });
+        });
+    </script>--%>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form>
+        <input  type="hidden" class="hiddenclass" runat='server' id="param1" value="" />
+        <input  type="hidden" class="hiddenclass_Emp" runat='server' id="param_Emp" value="" />
+        <input  type="hidden" class="hiddenclass_Role" runat='server' id="param_Role" value="" />
+    </form>
+           
+    <div data-role="page">
+
+    <div data-role="panel" id="mypanel" data-swipe-close="true" data-theme="a">
+        
+        <!-- panel content goes here -->
+        <ul data-role="listview" data-inset="true">
+            <li>
+                <img src="male_usr.jpg">
+                <h2><script>document.write($('.hiddenclass_Emp').val());</script></h2>
+                <p><script>document.write($('.hiddenclass_Role').val());</script></p>
+            </li>
+        </ul>
+
+        <ul data-role="listview" data-inset="true" data-theme="c">
+            <li><a href="https://www.gmail.com" target="_blank">Inbox <span class="ui-li-count"><script>document.write($('.hiddenclass').val());</script> </span></a></li>
+            <li data-icon="gear"><a href="#">Setting</a></li>
+            <li data-icon="info"><a href="#">About</a></li>
+            <li data-icon="false"><a href="mob_logout.aspx" data-ajax="false">Log out</a></li>
+            <li data-icon="delete"><a href="#my-header" data-rel="close">Close panel</a></li>
+        </ul>
+        
+        
+    </div><!-- /panel -->
+
+
+    <div data-role="header"  data-theme="b">
+        <a href="#mypanel" class="menu" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="b" data-iconshadow="false" data-inline="true">Bars</a>
+        <h1>LOGIC University</h1>
+    </div>      
+
+	<div data-role="content">
+
+    <p>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </p>
+    <p>
+    <br />
+    <ul data-role="listview">
+    <li><a href="mob_UpdateSupplier.aspx" data-ajax="false">Update Existing Supplier</a></li>
+        <li><a href="mob_AddNewSuppliers.aspx" data-ajax="false">Add New Supplier</a></li>
+        <li><a href="CheckAdjustStock.aspx" data-ajax="false">Check And Adjust Existing Stock</a></li>
+        <li><a href="Mob_ConsolidateStationaryRequisition.aspx" data-ajax="false">Consolidate Stationary Requisitions</a></li>
+        <li><a href="Mob_Outstanding.aspx" data-ajax="false">Fullfillment Outstanding</a></li>
+        <li><a href="Mob_UpdateStock.aspx" data-ajax="false">Update StockCard</a></li>
+    </ul>
+    </p>
+   
+
+</body>
+</html>
